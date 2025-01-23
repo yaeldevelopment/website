@@ -1212,3 +1212,4 @@ C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\ref\yael_project.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\yael_project.RazorAssemblyInfo.cache
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\yael_project.RazorAssemblyInfo.cs
+C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\yael_project.sourcelink.json
