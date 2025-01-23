@@ -1,21 +1,18 @@
-using System.Net;
-using System.IO;
-using Microsoft.Data.Sqlite;
-using System.Data.SQLite;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-// קביעת נתיב תקיית ה-ContentRoot ישירות
-// ���� �� ���� ����� ����� ��� UMBRACO_CONNECTION_STRING
+// קוד הגדרת חיבור לבסיס נתונים
 var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING");
-
 if (!string.IsNullOrEmpty(connectionString))
 {
-    // ���� �� ConnectionStrings:UmbracoDbDSN
     builder.Configuration["ConnectionStrings:UmbracoDbDSN"] = connectionString;
 }
 
-// Step 4: Setup Umbraco
+// קביעת הגדרות Umbraco
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
     .AddWebsite()
@@ -25,8 +22,7 @@ builder.CreateUmbracoBuilder()
 
 WebApplication app = builder.Build();
 
-
-// Step 5: Run Umbraco
+// הפעלת Umbraco
 await app.BootUmbracoAsync();
 
 app.UseUmbraco()
