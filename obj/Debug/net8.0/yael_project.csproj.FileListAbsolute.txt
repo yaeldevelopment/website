@@ -1203,7 +1203,6 @@ C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.yael_project.props
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.yael_project.props
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\yael_pro.3DE9D4A0.Up2Date
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\yael_project.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\refint\yael_project.dll
@@ -1213,3 +1212,4 @@ C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\yael_project.RazorAssemblyInfo.cache
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\yael_project.RazorAssemblyInfo.cs
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\yael_project.sourcelink.json
+C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

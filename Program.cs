@@ -14,11 +14,11 @@ if (!string.IsNullOrEmpty(connectionString))
 {
     // מעדכן את ההגדרות
     builder.Configuration["ConnectionStrings:UmbracoDbDSN"] = connectionString;
-    Console.WriteLine($"Loaded Connection String: {connectionString}");
+
 }
 else
 {
-    Console.WriteLine("Environment variable 'UMBRACO_CONNECTION_STRING' is not set or is empty.");
+   
 }
 
 // קביעת הגדרות Umbraco

@@ -13,8 +13,8 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-    
-        
+
+      
       },
     "Umbraco.Web.UI": {
       "commandName": "Project",
