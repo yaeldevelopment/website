@@ -1,18 +1,19 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:8.0-stretch-slim AS base
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
-
-FROM mcr.microsoft.com/dotnet/core/sdk:8.0-stretch AS build
-WORKDIR /src
-COPY ["Umbraco.Headless.Client.Samples.Web.csproj", "Umbraco.Headless.Client.Samples.Web/"]
-RUN dotnet restore "Umbraco.Headless.Client.Samples.Web/Umbraco.Headless.Client.Samples.Web.csproj"
-WORKDIR "/src/Umbraco.Headless.Client.Samples.Web"
+COPY *.csproj ./
+RUN dotnet restore --no-cache
+RUN dotnet --info
 COPY . ./
-RUN dotnet build "Umbraco.Headless.Client.Samples.Web.csproj" -c Release -o /app
 
-FROM build AS publish
-RUN dotnet publish "Umbraco.Headless.Client.Samples.Web.csproj" -c Release -o /app
+RUN dotnet publish -c Release -o out
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app .
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet Umbraco.Headless.Client.Samples.Web.dll
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+
+COPY --from=build /app/out ./
+EXPOSE 8080
+
+# הפעלת האפליקציה
+ENTRYPOINT ["dotnet", "yael_project.dll"]
+
+
