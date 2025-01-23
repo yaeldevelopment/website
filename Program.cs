@@ -4,8 +4,9 @@ using Microsoft.Data.Sqlite;
 using System.Data.SQLite;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+builder.Configuration["ContentRoot"] = "/app/wwwroot";
+builder.Configuration["WebRoot"] = "/app/wwwroot";  // אם נדרש
 // קביעת נתיב תקיית ה-ContentRoot ישירות
-builder.Configuration["ContentRoot"] = "/app/wwwroot"; // השתמש בנתיב מוחלט אם נדרש
 // ���� �� ���� ����� ����� ��� UMBRACO_CONNECTION_STRING
 var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING");
 
@@ -24,6 +25,7 @@ builder.CreateUmbracoBuilder()
     .Build();
 
 WebApplication app = builder.Build();
+
 
 // Step 5: Run Umbraco
 await app.BootUmbracoAsync();
