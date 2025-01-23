@@ -9,6 +9,9 @@ RUN dotnet restore
 COPY . ./
 RUN dotnet publish -c Release -o /app/publish
 
+# יצירת תיקיית App_Data (אם היא לא קיימת)
+RUN mkdir -p /app/App_Data
+
 # שלב ריצה
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
