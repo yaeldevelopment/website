@@ -4,13 +4,14 @@ using Microsoft.Data.Sqlite;
 using System.Data.SQLite;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
-
-// αγεχ ΰν χιιν ξωϊπδ ραιαδ αων UMBRACO_CONNECTION_STRING
+// Χ§Χ‘Χ™ΧΆΧª Χ ΧªΧ™Χ‘ ΧªΧ§Χ™Χ™Χª Χ”-ContentRoot Χ™Χ©Χ™Χ¨Χ•Χª
+builder.Configuration["ContentRoot"] = "/app/wwwroot"; // Χ”Χ©ΧªΧΧ© Χ‘Χ ΧªΧ™Χ‘ ΧΧ•Χ—ΧΧ ΧΧ Χ Χ“Χ¨Χ©
+// οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½ UMBRACO_CONNECTION_STRING
 var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING");
 
 if (!string.IsNullOrEmpty(connectionString))
 {
-    // ςγλο ΰϊ ConnectionStrings:UmbracoDbDSN
+    // οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½ ConnectionStrings:UmbracoDbDSN
     builder.Configuration["ConnectionStrings:UmbracoDbDSN"] = connectionString;
 }
 
