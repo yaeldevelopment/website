@@ -8,7 +8,8 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
-WORKDIR /app
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+COPY ./wwwroot/media /app/wwwroot/media
 COPY --from=build /app/out ./
 EXPOSE 8080
 
