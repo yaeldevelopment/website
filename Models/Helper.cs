@@ -128,43 +128,43 @@ namespace yael_project.Models
             }
             catch (Exception ex)
             {
-                Write_Subject(Subject.Send_Email, ex);
+                // Write_Subject(Subject.Send_Email, ex);
                 return false;
             }
         }
-        public static void Write_Subject(Subject subject,Exception e )
-        {
+        // public static void Write_Subject(Subject subject,Exception e )
+        // {
 
-            // מקבל את התיקיה הבסיסית של הפרויקט
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+        //     // מקבל את התיקיה הבסיסית של הפרויקט
+        //     string basePath = AppDomain.CurrentDomain.BaseDirectory;
 
-            // חזרה לשורש הפרויקט (איפה ש-wwwroot או קבצי השורש)
-            string projectRootPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\"));
+        //     // חזרה לשורש הפרויקט (איפה ש-wwwroot או קבצי השורש)
+        //     string projectRootPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\"));
 
-            // הגדרת נתיב לתיקיית Logs ביחס לשורש הפרויקט
-            string folderPath = Path.Combine(projectRootPath, "Logs");
+        //     // הגדרת נתיב לתיקיית Logs ביחס לשורש הפרויקט
+        //     string folderPath = Path.Combine(projectRootPath, "Logs");
 
-            // הגדרת שם הקובץ
-            string fileName = subject + "_" + DateTime.Now.Month + ".txt";
+        //     // הגדרת שם הקובץ
+        //     string fileName = subject + "_" + DateTime.Now.Month + ".txt";
 
-            // יצירת הנתיב המלא
-            string path = Path.Combine(folderPath, fileName);
+        //     // יצירת הנתיב המלא
+        //     string path = Path.Combine(folderPath, fileName);
 
-            // בדיקה אם הקובץ קיים, ואם לא - יצירה
-            if (!File.Exists(path)) // בדיקה אם הקובץ קיים
-            {
-                // יצירת הקובץ
-                File.WriteAllText(path, $"Message: {e.Message} Date: {DateTime.Now}"); // אפשר לשים תוכן ראשוני בקובץ במקום מחרוזת ריקה
-            }
-            else
-            {  
-                File.AppendAllText(path, $"\nMessage: {e.Message} Date: {DateTime.Now}");
+        //     // בדיקה אם הקובץ קיים, ואם לא - יצירה
+        //     if (!File.Exists(path)) // בדיקה אם הקובץ קיים
+        //     {
+        //         // יצירת הקובץ
+        //         File.WriteAllText(path, $"Message: {e.Message} Date: {DateTime.Now}"); // אפשר לשים תוכן ראשוני בקובץ במקום מחרוזת ריקה
+        //     }
+        //     else
+        //     {  
+        //         File.AppendAllText(path, $"\nMessage: {e.Message} Date: {DateTime.Now}");
 
-            }
+        //     }
 
 
 
-        }
+        // }
         public static string GetFilePathByMediaKey(IMediaService mediaService, string mediaKey)
         {
             // חפש את המדיה באמצעות המפתח
