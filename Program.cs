@@ -16,10 +16,7 @@ if (!string.IsNullOrEmpty(connectionString))
     builder.Configuration["ConnectionStrings:UmbracoDbDSN"] = connectionString;
 
 }
-else
-{
-   
-}
+
 
 // קביעת הגדרות Umbraco
 builder.CreateUmbracoBuilder()

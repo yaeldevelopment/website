@@ -5,17 +5,23 @@ WORKDIR /app
 COPY *.csproj ./
 RUN dotnet restore
 
-# העתק את שאר הקבצים
+# העתק את כל הקבצים ובנה את הפרויקט
 COPY . ./
 RUN dotnet publish -c Release -o /app/publish
 
 # שלב ריצה
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
+
+# העתק את התוכן משלב ה-build
 COPY --from=build /app/publish .
+COPY --from=build /app/wwwroot /app/wwwroot
+COPY --from=build /app/App_Data /app/App_Data
 
-# צור את התיקייה wwwroot/media אם היא חסרה
+# צור תיקיית מדיה (למקרה שחסרה)
 RUN mkdir -p /app/wwwroot/media
+
+# הדפסת תוכן התיקייה לבדיקת שגיאות
+RUN ls -la /app
+
 ENTRYPOINT ["dotnet", "yael_project.dll"]
-
-
