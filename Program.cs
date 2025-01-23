@@ -5,24 +5,21 @@ using Microsoft.Extensions.Hosting;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
+// טוען משתני סביבה בצורה מפורשת
+builder.Configuration.AddEnvironmentVariables();
 
-
-// טעינת משתני סביבה
-builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
-{
-    config.AddEnvironmentVariables(); // מוסיף משתני סביבה
-});
-
-// קוד הגדרת חיבור לבסיס נתונים
+// מקבל את מחרוזת החיבור ממשתנה הסביבה
 var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING");
 if (!string.IsNullOrEmpty(connectionString))
 {
+    // מעדכן את ההגדרות
     builder.Configuration["ConnectionStrings:UmbracoDbDSN"] = connectionString;
-
+    Console.WriteLine($"Loaded Connection String: {connectionString}");
 }
-
-// הדפס את מחרוזת החיבור לוודא שהיא קיימת
-
+else
+{
+    Console.WriteLine("Environment variable 'UMBRACO_CONNECTION_STRING' is not set or is empty.");
+}
 
 // קביעת הגדרות Umbraco
 builder.CreateUmbracoBuilder()
@@ -34,19 +31,18 @@ builder.CreateUmbracoBuilder()
 
 WebApplication app = builder.Build();
 
-// הגדרת אמצעי ניטור ובדיקת טעינת Umbraco
+// הפעלת Umbraco עם ניטור שגיאות
 try
 {
     await app.BootUmbracoAsync();
-
+    Console.WriteLine("Umbraco booted successfully.");
 }
 catch (Exception ex)
 {
-
-    throw; // זרוק את השגיאה למעלה כדי שתופיע בלוגים
+    Console.WriteLine($"Umbraco failed to boot: {ex.Message}");
+    throw;
 }
 
-// שימוש באמצעי Umbraco
 app.UseUmbraco()
     .WithMiddleware(u =>
     {
@@ -60,5 +56,4 @@ app.UseUmbraco()
         u.UseWebsiteEndpoints();
     });
 
-// הרצת האפליקציה
 await app.RunAsync();
