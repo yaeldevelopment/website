@@ -1,0 +1,38 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/about.css",
+    "inputFile": "wwwroot/css/about.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/home.css",
+    "inputFile": "wwwroot/css/home.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/header.css",
+    "inputFile": "wwwroot/css/header.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/variable.css",
+    "inputFile": "wwwroot/css/variable.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/SampleWebsite.css",
+    "inputFile": "wwwroot/css/SampleWebsite.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/general.css",
+    "inputFile": "wwwroot/css/general.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/contactPage.css",
+    "inputFile": "wwwroot/css/contactPage.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/popup.css",
+    "inputFile": "wwwroot/css/popup.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/main.css",
+    "inputFile": "wwwroot/css/main.scss"
+  }
+]

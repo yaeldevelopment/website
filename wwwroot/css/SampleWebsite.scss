@@ -1,0 +1,14 @@
+﻿.SampleWebsite {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid $color_general;
+
+    @media(min-width:767px) {
+        width: 40%;
+    }
+
+    @media(max-width:767px) {
+        width: 100%;
+    }
+}

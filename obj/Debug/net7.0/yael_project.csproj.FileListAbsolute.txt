@@ -1,0 +1,6 @@
+C:\Users\user1\Desktop\Year_b\umbraco\yael_project\yael_project\obj\Debug\net7.0\yael_project.csproj.AssemblyReference.cache
+C:\Users\user1\Desktop\Year_b\umbraco\yael_project\yael_project\obj\Debug\net7.0\yael_project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Desktop\Year_b\umbraco\yael_project\yael_project\obj\Debug\net7.0\yael_project.AssemblyInfoInputs.cache
+C:\Users\user1\Desktop\Year_b\umbraco\yael_project\yael_project\obj\Debug\net7.0\yael_project.AssemblyInfo.cs
+C:\Users\user1\Desktop\Year_b\umbraco\yael_project\yael_project\obj\Debug\net7.0\yael_project.csproj.CoreCompileInputs.cache
+C:\Users\user1\Desktop\Year_b\umbraco\yael_project\yael_project\obj\Debug\net7.0\yael_project.MvcApplicationPartsAssemblyInfo.cache

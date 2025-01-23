@@ -1,0 +1,63 @@
+﻿#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* רקע כהה */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup {
+    position: fixed;
+    top: calc(50% - 200px);
+
+  
+    height: 400px;
+    display: flex;
+    padding: 15px 20px;
+    z-index: 1111111111;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    @media(min-width:767px) {
+  left: 35%;
+  width: 30%;
+    }
+        @media(max-width:767px) {
+            left: 0;
+            width: 100%;
+        }
+
+        img {
+            height: 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        p, div {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+
+
+
+
+        .popup-close, .popup-advertising-close {
+            position: absolute;
+            top: 0px;
+            left: 24px;
+            cursor: pointer;
+            font-size: 43px;
+        }
+
+        p {
+            margin: 0;
+        }
+    }

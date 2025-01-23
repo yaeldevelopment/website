@@ -1,0 +1,197 @@
+﻿
+
+.slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    opacity: 1 !important;
+}
+.banner img {
+    @media(max-width:767px) {
+        height: 250px;
+    }
+
+    @media(min-width:767px) {
+        height: 500px;
+    }
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+    .slider-container {
+        align-items: center;
+        display: flex !important; /* וודא שהכרטיסיות נראות */
+        overflow: visible; /* ודא שאין חיתוך */
+        height: auto;
+        width: 80%;
+        margin: 50px auto;
+    }
+
+    .card {
+        height: 475px;
+        display: block;
+        overflow: hidden;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .card h3 {
+        margin: 10px 0;
+        font-size: 1.5em;
+        color: #333;
+    }
+
+    .card {
+        p, blockquote {
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 1em;
+            color: #666;
+            margin: 0;
+            display: -webkit-box;
+            padding: 0;
+        }
+
+        p {
+            -webkit-line-clamp: 1;
+        }
+
+        blockquote {
+            border: none !important;
+            -webkit-line-clamp: 3;
+        }
+    }
+    /* עיצוב בסיסי לסליידר */
+    .slider-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    /* עיצוב לחיצים של הסליידר */
+    .slick-prev,
+    .slick-next {
+        color: #000000;
+        font-size: 35px;
+        line-height: 1;
+        background-color: $color_general;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .slick-prev {
+        left: -50px;
+    }
+
+    .slick-next {
+        right: -50px;
+    }
+    /* הסרה של החיצים הפנימיים המובנים */
+    .slick-prev::before,
+    .slick-next::before {
+        content: '';
+    }
+
+    .marketing-bar {
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 50px;
+        background-color: rgb(0 0 0 / 25%);
+        border-radius: 10px;
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5%;
+        }
+
+        .item {
+            text-align: center;
+            flex: 1 1 calc(20% - 20px); // 20% width with gap
+            max-width: 200px; // מגביל את רוחב הפריטים
+            margin: 0 3%;
+
+            img {
+                width: 100%;
+                max-width: 150px; // גודל מרבי לתמונה
+                height: auto;
+                border-radius: 10px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                }
+            }
+
+            p {
+                margin-top: 10px;
+                font-weight: 600;
+                color: #333;
+            }
+        }
+    }
+
+    .square {
+        height: 200px;
+        perspective: 1000px;
+        margin: 20px auto;
+
+        .front,
+        .back {
+            width: 90%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .front {
+            background-color: #f0f0f0;
+            color: $color_text;
+        }
+
+        .back {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            transform: rotateY(180deg);
+        }
+
+        &:hover {
+            .front {
+                transform: rotateY(180deg);
+            }
+
+            .back {
+                transform: rotateY(0);
+            }
+        }
+    }
+
+
