@@ -1,25 +1,17 @@
-# בניית התמונה
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0-windowsservercore-ltsc2022 AS build
 WORKDIR /app
-COPY *.csproj ./ 
-RUN dotnet restore --no-cache
-RUN dotnet --info
-COPY . ./
 
-RUN dotnet publish -c Release -o out
+# Copy and restore project
+COPY . .
+RUN dotnet restore
 
-# יצירת תמונה מתוך aspnet
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+# Build and publish
+RUN dotnet publish -c Release -o /app/publish
 
-# הגדרת משתנים לסביבת העבודה
-ENV ASPNETCORE_ENVIRONMENT=Production
-ENV ContentRoot=/app/wwwroot
-ENV WebRoot=/app/wwwroot
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-windowsservercore-ltsc2022
+WORKDIR /app
+COPY --from=build /app/publish .
 
-# העתקת הקבצים שהיו מבודדים במהלך הבנייה
-COPY --from=build /app/out ./ 
-
-EXPOSE 8080
-
-# הפעלת האפליקציה
 ENTRYPOINT ["dotnet", "yael_project.dll"]
+
+
