@@ -8,8 +8,8 @@ EXPOSE 443
 # Specify the SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["yael_project/yael_project.csproj", "yael_project/"]
-RUN dotnet restore "yael_project/yael_project.csproj"
+COPY ["./yael_project.csproj", "yael_project/"]
+RUN dotnet restore "./yael_project.csproj"
 COPY . .
 WORKDIR "/src/yael_project"
 RUN dotnet build "yael_project.csproj" -c Release -o /app/build
