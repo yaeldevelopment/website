@@ -24,7 +24,8 @@ WORKDIR /app
 
 # Copy the build output
 COPY --from=build /app/publish .
-
+# Ensure the wwwroot/media directory exists
+RUN mkdir -p /app/wwwroot/media
 # Set environment variable for ASP.NET Core URLs
 ENV ASPNETCORE_URLS=http://+:8080
 ENTRYPOINT ["dotnet", "yael_project.dll"]
