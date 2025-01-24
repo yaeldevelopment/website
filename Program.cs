@@ -23,6 +23,7 @@ builder.Services.AddUmbraco(builder.Environment, builder.Configuration)
     .AddDeliveryApi()
     .AddComposers();
 
+
 var app = builder.Build();
 
 // Boot Umbraco with error handling
