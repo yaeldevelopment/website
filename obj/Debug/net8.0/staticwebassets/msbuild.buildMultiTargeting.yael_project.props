@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\yael_project.props" />
+</Project>
