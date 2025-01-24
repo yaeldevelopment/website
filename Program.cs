@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Umbraco.Cms.Web.Common.DependencyInjection;
+
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -16,29 +16,19 @@ if (!string.IsNullOrEmpty(connectionString))
     builder.Configuration["ConnectionStrings:UmbracoDbDSN"] = connectionString;
 }
 
-// Configure Umbraco services
-builder.Services.AddUmbraco(builder.Environment, builder.Configuration)
+// Step 4: Setup Umbraco
+builder.CreateUmbracoBuilder()
     .AddBackOffice()
     .AddWebsite()
     .AddDeliveryApi()
-    .AddComposers();
+    .AddComposers()
+    .Build();
 
+WebApplication app = builder.Build();
 
-var app = builder.Build();
+// Step 5: Run Umbraco
+await app.BootUmbracoAsync();
 
-// Boot Umbraco with error handling
-try
-{
-    await app.BootUmbracoAsync();
-    Console.WriteLine("Umbraco booted successfully.");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Umbraco failed to boot: {ex.Message}");
-    throw;
-}
-
-// Configure the Umbraco middleware pipeline
 app.UseUmbraco()
     .WithMiddleware(u =>
     {
@@ -51,6 +41,8 @@ app.UseUmbraco()
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
+
+
 
 // Bind to the PORT environment variable or default to 8080
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
