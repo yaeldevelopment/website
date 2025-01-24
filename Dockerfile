@@ -33,7 +33,7 @@ RUN chmod -R 777 /app/wwwroot /app/App_Data
 ENV ASPNETCORE_URLS=http://+:8080
 ENTRYPOINT ["dotnet", "yael_project.dll"]
 # Expose port 8080
-EXPOSE 8080
+EXPOSE 10000
 EXPOSE 80
 EXPOSE 443
 # Run the application
