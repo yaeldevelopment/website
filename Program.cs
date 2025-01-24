@@ -52,5 +52,5 @@ app.UseUmbraco()
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
-await app.Run("http://0.0.0.0:8080"); // Ensure the app listens on 8080
+ app.Run("http://0.0.0.0:8080"); // Ensure the app listens on 8080
 //await app.RunAsync();
