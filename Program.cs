@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,7 +26,10 @@ builder.Services.AddUmbraco(builder.Environment, builder.Configuration)
 
 // Add Razor Pages services (for Umbraco's Razor Pages)
 builder.Services.AddRazorPages();
-
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new RequestCulture("en-US");
+});
 WebApplication app = builder.Build();
 
 // Step 5: Run Umbraco

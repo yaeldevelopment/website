@@ -36,6 +36,10 @@ ENV ASPNETCORE_URLS=http://+:8080
 
 # Expose ports
 EXPOSE 8080
+RUN apt-get update && apt-get install -y \
+    libc6-dev \
+    libicu-dev
 
 # Start the application
 ENTRYPOINT ["dotnet", "yael_project.dll"]
+
