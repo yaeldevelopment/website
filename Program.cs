@@ -51,6 +51,7 @@ app.UseEndpoints(endpoints => {
 
 
 // Bind to the PORT environment variable or default to 8080
-//var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-await app.RunAsync();
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080"; // ברירת מחדל ל-8080
+await app.RunAsync($"http://0.0.0.0:{port}");
+
 
