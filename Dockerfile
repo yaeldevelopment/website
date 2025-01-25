@@ -23,14 +23,14 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 # Set the working directory
 WORKDIR /app
 
-# Copy the build output
+# Copy the build output from the build stage
 COPY --from=build /app/publish .
 
 # Ensure directories exist for runtime
-RUN mkdir -p /app/wwwroot/media /app/wwwroot/css /app/wwwroot/js /app/wwwroot/lib
+RUN mkdir -p /app/wwwroot/media /app/wwwroot/css /app/wwwroot/js /app/wwwroot/lib /app/App_Data
 RUN chmod -R 755 /app/wwwroot /app/App_Data
 
-# Copy static files
+# Copy static files (if they exist in the source code)
 COPY ./wwwroot/css /app/wwwroot/css
 COPY ./wwwroot/js /app/wwwroot/js
 COPY ./wwwroot/lib /app/wwwroot/lib
