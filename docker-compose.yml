@@ -5,7 +5,7 @@ services:
     build:
       context: .
     ports:
-      - "10000:10000"
+     - "8080:8080"
     volumes:
       # Volume for App_Data to persist data
       - umbraco_appdata:/app/App_Data

@@ -36,10 +36,12 @@ COPY ./wwwroot/js /app/wwwroot/js
 COPY ./wwwroot/lib /app/wwwroot/lib
 COPY ./wwwroot/media /app/wwwroot/media
 # Set the ASP.NET Core URLs environment variable
-ENV ASPNETCORE_URLS=http://+:10000
-
-# Expose the application port
-EXPOSE 10000
+ENV ASPNETCORE_URLS=http://+:8080
 
 # Start the application
 ENTRYPOINT ["dotnet", "yael_project.dll"]
+# Expose port 8080
+EXPOSE 8080
+EXPOSE 80
+EXPOSE 443
+# Run the application
