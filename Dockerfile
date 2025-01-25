@@ -29,6 +29,7 @@ COPY --from=build /app/publish .
 # Create necessary directories for Umbraco and ensure permissions
 RUN mkdir -p /app/wwwroot/media /app/wwwroot/css /app/wwwroot/js /app/wwwroot/lib /app/App_Data \
     && chmod -R 777 /app/wwwroot /app/App_Data
+RUN chmod -R 777 /app/Logs /app/Temp /app/Umbraco /app/Config
 
 # Set the ASP.NET Core URLs environment variable
 ENV ASPNETCORE_URLS=http://+:8080

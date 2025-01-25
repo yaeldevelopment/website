@@ -51,10 +51,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "AllinOneAccessibility": {
-              "target": "Package",
-              "version": "[1.0.6, )"
-            },
             "DocumentFormat.OpenXml": {
               "target": "Package",
               "version": "[3.2.0, )"
@@ -85,7 +81,7 @@
             },
             "Umbraco.Cms": {
               "target": "Package",
-              "version": "[13.2.0, )"
+              "version": "[13.5.2, )"
             }
           },
           "imports": [

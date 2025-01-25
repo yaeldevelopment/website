@@ -961,6 +961,8 @@ C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\MessagePack.Annotations.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
@@ -977,11 +979,14 @@ C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Extensions.Http.Polly.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
@@ -1067,6 +1072,7 @@ C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\System.Runtime.Caching.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\System.Security.Permissions.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\System.Threading.AccessControl.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\System.Windows.Extensions.dll
@@ -1184,7 +1190,7 @@ C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
-C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\runtimes\win\lib\netstandard2.0\System.Threading.AccessControl.dll
+C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Threading.AccessControl.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\yael_project.csproj.AssemblyReference.cache
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Debug\net8.0\yael_project.GeneratedMSBuildEditorConfig.editorconfig
