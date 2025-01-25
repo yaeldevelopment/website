@@ -34,7 +34,7 @@ RUN chmod -R 755 /app/wwwroot /app/App_Data
 COPY ./wwwroot/css /app/wwwroot/css
 COPY ./wwwroot/js /app/wwwroot/js
 COPY ./wwwroot/lib /app/wwwroot/lib
-
+COPY ./wwwroot/media /app/wwwroot/media
 # Set the ASP.NET Core URLs environment variable
 ENV ASPNETCORE_URLS=http://+:10000
 
