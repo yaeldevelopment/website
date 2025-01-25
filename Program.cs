@@ -57,5 +57,5 @@ app.UseEndpoints(endpoints =>
 app.UseAuthorization();
 app.MapControllers();
 // Bind to the PORT environment variable or default to 8080
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
 await app.RunAsync($"http://0.0.0.0:{port}");
