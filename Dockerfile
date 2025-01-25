@@ -33,10 +33,8 @@ RUN mkdir -p /app/wwwroot/media /app/wwwroot/css /app/wwwroot/js /app/wwwroot/li
 # Set the ASP.NET Core URLs environment variable
 ENV ASPNETCORE_URLS=http://+:8080
 
+# Expose ports
 EXPOSE 8080
-EXPOSE 80
-EXPOSE 443
-
 
 # Start the application
 ENTRYPOINT ["dotnet", "yael_project.dll"]
