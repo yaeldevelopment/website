@@ -605,3 +605,4 @@ C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Release\net8
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Release\net8.0\yael_project.pdb
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Release\net8.0\yael_project.genruntimeconfig.cache
 C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Release\net8.0\ref\yael_project.dll
+C:\Users\user1\Desktop\Year_b\umbraco\yael_umbraco\yael_project\obj\Release\net8.0\staticwebassets.upToDateCheck.txt

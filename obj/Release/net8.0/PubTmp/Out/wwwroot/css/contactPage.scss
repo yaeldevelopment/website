@@ -1,0 +1,77 @@
+﻿
+
+.contact-form-container {
+   
+    padding: 20px;
+
+    max-width: 600px;
+    width: 100%;
+}
+
+h2 {
+    margin: 40px 0px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+textarea {
+    resize: vertical;
+}
+
+label[class*="error"] {
+    color: red;
+    font-size: 18px !important;
+    display: none; /* Hidden by default */
+}
+
+.submit-button {
+    background-color: $color_general;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    width: 100%;
+    transition: background-color 0.3s;
+    cursor: not-allowed !important;
+}
+
+.submit-button:not(:disabled) {
+    cursor: pointer !important;
+}
+
+button.submit-button:not(:disabled):hover {
+    opacity: 0.8;
+}
+.contact_img {
+    width: -webkit-fill-available;
+    height: 726px;
+    border-radius: 12px;
+    margin-right: 5%;
+}
+
+@media(min-width:767px) {
+    .form_div {
+        display: flex;
+    }}
+
+

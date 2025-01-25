@@ -1,0 +1,180 @@
+﻿/* הגדרות בסיסיות */
+header .container{
+    display:flex;
+
+}
+header {
+    min-height: 98.89px;
+
+    #logo img {
+        height: 65px;
+        width: 65px;
+        border-radius: 50%;
+    }
+}
+.header_list {
+    display: flex;
+    position: relative;
+
+    .link {
+        list-style-type: none;
+    }
+
+    .general_link {
+        position: relative;
+        /* חץ */
+        &::after {
+            content: ">";
+            cursor: pointer;
+            font-weight: 300;
+            font-size: 18px;
+            color: #000;
+            display: inline-block;
+            transform: rotate(270deg);
+            transition: transform 0.3s ease;
+        }
+
+        &:hover::after {
+            font-weight: bold;
+            transform: rotate(90deg); /* הופך את החץ */
+        }
+    }
+    /* הסתרה ברירת מחדל */
+    .hide {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: white;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    /* הופעה של התפריט במעבר עכבר */
+    .general_link:hover + .hide,
+    .hide:hover {
+        display: block !important;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* עיצוב של ה-img */
+.link .img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}
+.breadcrumbs {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.breadcrumbs li::after {
+    content: ">";
+    margin-left: 10px;
+}
+
+.breadcrumbs li:last-child::after {
+    content: ""; /* מסיר את החץ האחרון */
+}
+#menu-toggle {
+    display: none;
+
+}
+
+    @media(max-width:767px) {
+        .hamburger-menu {
+            position: relative;
+
+            #menu-toggle {
+
+
+                &:checked + .menu-icon span:nth-child(1) {
+                    transform: rotate(45deg) translate(5px, 5px);
+                }
+
+                &:checked + .menu-icon span:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:checked + .menu-icon span:nth-child(3) {
+                    transform: rotate(-45deg) translate(5px, -5px);
+                }
+
+                &:checked ~ .menu {
+                    max-height: 300px; // גובה התפריט הפתוח
+                }
+
+                &:checked ~ .menu {
+                    display: block !important;
+                    margin-top: 39.89px;
+                }
+            }
+
+            .menu-icon {
+                display: flex;
+                position: absolute;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 35px;
+                top: 15px;
+                height: 20px;
+                right: 49px;
+                cursor: pointer;
+
+
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 4px;
+                    background-color: #333;
+                    border-radius: 3px;
+                    transition: transform 0.3s, opacity 0.3s;
+                }
+            }
+
+            .menu {
+                display: none;
+                max-height: 0;
+                overflow: hidden;
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 100%;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                transition: max-height 0.3s ease;
+                z-index: 1111111;
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        border-bottom: 1px solid #ddd;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        a {
+                            display: block;
+                            padding: 10px;
+                            text-decoration: none;
+                            color: #333 !important;
+
+                            &:hover {
+                                background-color: #f0f0f0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+

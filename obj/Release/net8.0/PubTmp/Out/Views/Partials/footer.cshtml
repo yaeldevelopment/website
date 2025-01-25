@@ -1,0 +1,25 @@
+﻿@using Umbraco.Cms.Core.Web
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@inject IUmbracoContextFactory UmbracoContextFactory
+@{
+
+    string footer_text = "";
+    var content = Model as IPublishedContent;
+    using (var umbracoContextReference = UmbracoContextFactory.EnsureUmbracoContext())
+    {
+        var umbracoContext = umbracoContextReference.UmbracoContext;
+
+
+
+        var homePage = umbracoContext.Content.GetAtRoot().FirstOrDefault();
+        footer_text = ((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Footer_text;
+
+
+    }
+
+}
+<footer>
+    <p>@footer_text</p>
+</footer>

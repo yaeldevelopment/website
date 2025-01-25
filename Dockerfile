@@ -13,6 +13,7 @@ RUN dotnet restore
 
 # Copy the rest of the application code
 COPY . ./
+COPY . /app/
 
 # Publish the application in Release mode
 RUN dotnet publish -c Release -o /app/publish
@@ -28,7 +29,7 @@ COPY --from=build /app/publish .
 
 # Ensure directories exist for runtime
 RUN mkdir -p /app/wwwroot/media /app/wwwroot/css /app/wwwroot/js /app/wwwroot/lib /app/App_Data
-RUN chmod -R 755 /app/wwwroot /app/App_Data
+RUN chmod -R 777 /app/wwwroot /app/App_Data
 
 # Copy static files (if they exist in the source code)
 COPY ./wwwroot/css /app/wwwroot/css

@@ -1,0 +1,27 @@
+﻿body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  direction: rtl;
+  text-align: right;
+}
+
+.card {
+  height: 300px;
+  margin: 10px 8px;
+  text-align: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.card:hover {
+  opacity: 0.8;
+}
+
+.container:not(header .container):not(footer .container) {
+  margin: 5% auto;
+}

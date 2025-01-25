@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6LteKhz5wUWhJW7Mf1TKaAAAAAACAAAAAAAQZgAAAAEAACAAAAClGSmDXF128a8W7PqNPDaNeIfcpSphZ/T6EIkEImt/lQAAAAAOgAAAAAIAACAAAABZmE4crI/G8ZlrqUnmj0+DZGIC7F/QfpxNXNQQLmx36CAAAAD3SPETnw6/U+DzhnQ9v/vJKVThMG/7Rg12MtnMk/miFUAAAAC1S90WfpJdUxqga/nanBZ/nv4BqiTlXqoBbKHYRvMFz+iKAHr5WgyBV9ULD5lGGb/3aEpaqh16fwYK8/fy6Inh</EncryptedPassword>
+    <_PublishTargetUrl>ftp://116.203.239.117:1443</_PublishTargetUrl>
+    <History>False|2025-01-25T18:06:34.9608727Z||;False|2025-01-25T20:01:16.9610068+02:00||;False|2025-01-25T19:57:00.6425842+02:00||;False|2025-01-25T19:50:29.8151550+02:00||;False|2025-01-25T19:47:18.7011107+02:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="providerName">
+      <Value>System.Data.SqlClient</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="umbracoDbDSN">
+      <Value>System.Data.SqlClient</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

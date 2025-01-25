@@ -1,0 +1,80 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+   
+    direction: rtl;
+    text-align: right;
+    font-size:21px !important;
+}
+.card {
+    height: 300px;
+    margin: 10px 8px;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: background-color 0.3s ease; // אנימציה חלקה במעבר
+    &:hover {
+      opacity:0.8;
+    }
+}
+@media(max-width:767px){
+    .container:not(header .container):not(footer .container) {
+        margin: 10% auto !important;
+    }
+}
+
+
+@media(min-width:767px) {
+    .container:not(header .container):not(footer .container) {
+        margin: 5% auto;
+    }
+    }
+
+    a {
+        color: $color_text !important;
+    }
+
+    .back_img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .row {
+        flex-wrap: wrap;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    [data-row] {
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+    }
+
+    // לולאת @for לעיצוב ספציפי לכל שורה לפי data-row
+    @for $i from 1 through 8 {
+        [data-row="#{$i}"] {
+            -webkit-line-clamp: #{$i};
+        }
+    }
+
+    .windows {
+        border-radius: 8px;
+        box-shadow: $box_shadow;
+        background-color: #fff;
+    }
+#advertising-popup {
+    background-position: center;
+    background-size: cover;
+    align-content: flex-start !important;
+
+    @media(min-width:767px) {
+        left: 41% !important;
+        width: 18% !important;
+    }
+}

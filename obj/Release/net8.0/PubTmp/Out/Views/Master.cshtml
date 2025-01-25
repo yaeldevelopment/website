@@ -1,0 +1,128 @@
+﻿@using Umbraco.Cms.Core.Services
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Newtonsoft.Json
+@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Web
+@using yael_project.Models
+@inject IUmbracoContextFactory UmbracoContextFactory
+@inject IContentService ContentService
+@inject IMediaService MediaService
+@{
+    Layout = null;
+    string color_general;
+    string color_text = "";
+    string show_popup = "false";
+    string rich_text_popup = "";
+    string show_time = "";
+    var content = Model as IPublishedContent;
+
+
+    color_general = Helper.GetSettingValue(ContentService, "color_general");
+
+    color_text = Helper.GetSettingValue(ContentService, "color_text");
+
+    show_popup = Helper.GetSettingValue(ContentService, "show_popup");
+    rich_text_popup = Helper.GetSettingValue(ContentService, "rich_text_popup");
+    show_time = Helper.GetSettingValue(ContentService, "show_time");
+
+    var icon_succses = Helper.GetSettingValue(ContentService, "icon_succses");
+    var path_icon_succses = Helper.GetFilePathByMediaKey(MediaService, icon_succses);
+
+    var icon_fail = Helper.GetSettingValue(ContentService, "icon_fail");
+    var path_icon_fail = Helper.GetFilePathByMediaKey(MediaService, icon_fail);
+
+    var img_website = Helper.GetSettingValue(ContentService, "img_website");
+    var path_img_website = Helper.GetFilePathByMediaKey(MediaService, img_website);
+
+    var img_popup = Helper.GetSettingValue(ContentService, "img_popup");
+    var path_img_popup = Helper.GetFilePathByMediaKey(MediaService, img_popup);
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="@path_img_website">
+
+
+    <title>  יעל עג'מי - מפתחת| Full Stack</title>
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="~/lib/slick-master/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+
+    <script src="~/lib/jquery-3.7.1.min.js"></script>
+    <script src="~/lib/slick-master/slick/slick.min.js"></script>
+    <script src="~/lib/jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="PKWT2JYPKI"></script>
+    <script src="~/js/ready.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אודות | יעל עג'מי - מפתחת Full Stack</title>
+    <style>
+        :root {
+            --color-general: @color_general;
+            --color_text: @color_text;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="overlay" class="hide"></div>
+    <div id="success-popup" class="popup success hide windows">
+        <span class="popup-close">&times;</span>
+        <img src="@path_icon_succses" />
+        <div class="rich_text"></div>
+
+    </div>
+
+    <div id="error-popup" class="popup error hide windows">
+        <span class="popup-close">&times;</span>
+        <img src="@path_icon_fail" />
+        <div class="rich_text"></div>
+    </div>
+
+    <div id="advertising-popup" style="background-image:url(@path_img_popup)" class="popup advertising hide windows">
+        <span class="popup-advertising-close">&times;</span>
+        @Html.Raw(rich_text_popup)
+    </div>
+    @Html.Partial("header")
+
+
+    @RenderBody()
+    @Html.Partial("footer")
+    @if (show_popup == "1")
+    {
+        <script>
+            // הצגת פופאפ אם אין Cookie או אם הוא פג תוקף
+            $(document).ready(function () {
+
+
+                const popupShown = getCookie("promoPopup");
+                if (!popupShown) {
+                    setInterval(() => { showPopup_advertising() }, 8000);
+                }
+                $('.popup-advertising-close').click(function () {
+                    $(this).parent('.popup').fadeOut();
+                    $("#overlay").addClass("hide");
+
+                });
+
+
+
+
+                    });
+                function showPopup_advertising() {
+                            $("#advertising-popup").removeClass("hide");
+                            $("#overlay").removeClass("hide");
+                            setCookie("promoPopup", "true", @show_time);
+                        }
+
+        </script>
+
+    }
+
+</body>

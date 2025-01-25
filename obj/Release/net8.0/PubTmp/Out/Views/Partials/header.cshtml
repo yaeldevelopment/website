@@ -1,0 +1,117 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using System.Collections
+@using Newtonsoft.Json
+@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Services
+@using Umbraco.Cms.Core.Web
+@using Umbraco.Cms.Web.Common.PublishedModels
+@using System.Collections.Generic
+@using Umbraco.Cms.Web.Common.UmbracoContext
+@using yael_project.Models
+@inject IUmbracoContextFactory UmbracoContextFactory
+    @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+    @inject IContentService ContentService
+    @inject IMediaService MediaService
+@{
+
+    Umbraco.Cms.Core.Models.Blocks.BlockListModel list_link;
+    var content = Model as IPublishedContent;
+    string path_img_website;
+    using (var umbracoContextReference = UmbracoContextFactory.EnsureUmbracoContext())
+    {
+        var umbracoContext = umbracoContextReference.UmbracoContext;
+    
+
+
+        var homePage = umbracoContext.Content.GetAtRoot().FirstOrDefault();
+        list_link = ((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).List_link;
+
+        var img_website = Helper.GetSettingValue(ContentService, "img_website");
+        path_img_website = Helper.GetFilePathByMediaKey(MediaService, img_website);
+    }
+    
+
+    var currentPage = Model; // הדף הנוכחי
+    var breadcrumbs = currentPage.AncestorsOrSelf().Where(x => x.IsVisible()); // קבלת כל האבות עד לדף הנוכחי
+
+
+
+   try
+{
+        @if (list_link != null)
+        {   // <div class="container">
+
+            <header>
+                <div class="hamburger-menu">
+                    <input type="checkbox" id="menu-toggle" />
+                    <label for="menu-toggle" class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <nav class="menu header_list container">
+
+                        <a id="logo" href="/"><img src="@path_img_website" alt="לוגו" /></a>
+                        @for (int i = 0; i < list_link.Count; i++)
+                {  
+               
+                     
+                            <ul>
+                        @{
+
+
+
+                     Umbraco.Cms.Core.Models.Blocks.BlockListModel sub_list_Link = ((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.List_link>)(new System.Collections.Generic.List<Umbraco.Cms.Core.Models.Blocks.BlockListItem>(list_link)[i])).Content.List_icon_text;
+
+
+                        }
+
+
+
+                        @for (int j = 0; j < sub_list_Link.Count; j++)
+                        {
+
+
+                                    Umbraco.Cms.Web.Common.PublishedModels.List_linkList_icon_textBlockList item = (Umbraco.Cms.Web.Common.PublishedModels.List_linkList_icon_textBlockList)(sub_list_Link)[j].Content;
+
+                                   
+                                <li class="link @(sub_list_Link.Count>1?(j == 0  ?"general_link":"hide"):"")">
+                                        <a href="@(((Umbraco.Cms.Web.Common.PublishedModels.List_linkList_icon_textBlockList)item).Url_list.Url)">
+                                            @if (((Umbraco.Cms.Web.Common.PublishedModels.List_linkList_icon_textBlockList)item).Icon != null)
+                                {
+                                    <img class="img" src="@(item.Icon.LocalCrops.Src)" />
+                                }
+
+                                            @(((Umbraco.Cms.Web.Common.PublishedModels.List_linkList_icon_textBlockList)item).Url_list.Name)
+                                        </a>
+
+                            </li>
+
+                        }
+
+
+
+
+                    </ul>
+             
+               
+
+                }          </nav>
+                </div>
+            </header>
+        }
+    }
+    catch (JsonReaderException ex)
+    {
+
+    }
+
+
+
+
+}
+
+
