@@ -9,7 +9,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 // Load environment variables
 builder.Configuration.AddEnvironmentVariables();
 
-// Retrieve and set the connection string
+// Retrieve and set the connection string from environment variables
 var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING");
 if (!string.IsNullOrEmpty(connectionString))
 {
@@ -17,11 +17,14 @@ if (!string.IsNullOrEmpty(connectionString))
 }
 
 // Step 4: Setup Umbraco and pass IWebHostEnvironment and IConfiguration to AddUmbraco
-builder.Services.AddUmbraco(builder.Environment, builder.Configuration) // Pass builder.Environment and builder.Configuration here
+builder.Services.AddUmbraco(builder.Environment, builder.Configuration)
     .AddBackOffice()
     .AddWebsite()
     .AddComposers()
     .Build();
+
+// Add Razor Pages services (for Umbraco's Razor Pages)
+builder.Services.AddRazorPages();
 
 WebApplication app = builder.Build();
 
