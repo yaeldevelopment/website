@@ -46,12 +46,16 @@ app.UseUmbraco()
 
 app.UseStaticFiles();
 app.UseRouting();
+// Other middleware (like routing, authorization, etc.)
+app.UseRouting();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
-    endpoints.MapRazorPages();
 });
 
+app.UseAuthorization();
+app.MapControllers();
 // Bind to the PORT environment variable or default to 8080
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 await app.RunAsync($"http://0.0.0.0:{port}");
