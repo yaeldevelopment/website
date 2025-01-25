@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 using Umbraco.Cms.Core.DependencyInjection;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -30,6 +31,11 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     options.DefaultRequestCulture = new RequestCulture("en-US");
 });
+
+builder.Host.UseSerilog((ctx, lc) => lc
+    .WriteTo.Console()
+    .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day));
+
 WebApplication app = builder.Build();
 
 // Step 5: Run Umbraco
@@ -49,18 +55,11 @@ app.UseUmbraco()
     });
 
 app.UseStaticFiles();
-app.UseRouting();
-// Other middleware (like routing, authorization, etc.)
-app.UseRouting();
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
-
+app.UseRouting();  // Only once
 app.UseAuthorization();
+app.UseSerilogRequestLogging();
 app.MapControllers();
+
 // Bind to the PORT environment variable or default to 8080
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 await app.RunAsync($"http://0.0.0.0:{port}");
-
