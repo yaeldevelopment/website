@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  umbraco:
+    image: yael_project
+    build:
+      context: .
+    ports:
+      - "10000:10000"
+    volumes:
+      - umbraco_appdata:/app/App_Data
+      - umbraco_media:/app/wwwroot/media
+volumes:
+  umbraco_appdata:
+  umbraco_media:
