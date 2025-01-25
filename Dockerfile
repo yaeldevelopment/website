@@ -7,7 +7,7 @@ WORKDIR /app
 # Use a custom NuGet package directory to improve build cache usage
 ENV NUGET_PACKAGES=/root/.nuget/packages
 
-# Copy project files and restore dependencies
+# Copy only the .csproj files first to restore dependencies
 COPY *.csproj ./
 RUN dotnet restore
 
