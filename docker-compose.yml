@@ -7,8 +7,13 @@ services:
     ports:
       - "10000:10000"
     volumes:
+      # Volume for App_Data to persist data
       - umbraco_appdata:/app/App_Data
+      # Volume for media files to persist uploaded media
       - umbraco_media:/app/wwwroot/media
+
 volumes:
+  # Define named volume for App_Data
   umbraco_appdata:
+  # Define named volume for media files
   umbraco_media:
