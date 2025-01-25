@@ -3,55 +3,38 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-// Load environment variables
-builder.Configuration.AddEnvironmentVariables();
-
-// Retrieve and set the connection string
-var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING");
-if (!string.IsNullOrEmpty(connectionString))
-{
-    builder.Configuration["ConnectionStrings:UmbracoDbDSN"] = connectionString;
-}
-
-// Step 4: Setup Umbraco
-builder.CreateUmbracoBuilder()
+// Add services to the container.
+builder.Services.AddRazorPages();  // Add this line to register Razor Pages services
+builder.Services.AddUmbraco()
     .AddBackOffice()
     .AddWebsite()
-    .AddDeliveryApi()
     .AddComposers()
     .Build();
 
 WebApplication app = builder.Build();
 
-// Step 5: Run Umbraco
-await app.BootUmbracoAsync();
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
 
-app.UseUmbraco()
-    .WithMiddleware(u =>
-    {
-        u.UseBackOffice();
-        u.UseWebsite();
-    })
-    .WithEndpoints(u =>
-    {
-        u.UseInstallerEndpoints();
-        u.UseBackOfficeEndpoints();
-        u.UseWebsiteEndpoints();
-    });
-
+app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+// Use routing and Razor Pages
 app.UseRouting();
-app.UseEndpoints(endpoints => {
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();  // Ensure this is in place to map Razor Pages routes
     endpoints.MapControllers();
-    endpoints.MapRazorPages();
 });
 
-
-// Bind to the PORT environment variable or default to 8080
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080"; // ברירת מחדל ל-8080
-await app.RunAsync($"http://0.0.0.0:{port}");
-
-
+app.Run();
