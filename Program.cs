@@ -2,12 +2,22 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Umbraco.Cms.Core.DependencyInjection;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();  // Add this line to register Razor Pages services
-builder.Services.AddUmbraco()
+// Load environment variables
+builder.Configuration.AddEnvironmentVariables();
+
+// Retrieve and set the connection string
+var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING");
+if (!string.IsNullOrEmpty(connectionString))
+{
+    builder.Configuration["ConnectionStrings:UmbracoDbDSN"] = connectionString;
+}
+
+// Step 4: Setup Umbraco and pass IWebHostEnvironment and IConfiguration to AddUmbraco
+builder.Services.AddUmbraco(builder.Environment, builder.Configuration) // Pass builder.Environment and builder.Configuration here
     .AddBackOffice()
     .AddWebsite()
     .AddComposers()
@@ -15,26 +25,30 @@ builder.Services.AddUmbraco()
 
 WebApplication app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
-else
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
+// Step 5: Run Umbraco
+await app.BootUmbracoAsync();
 
-app.UseHttpsRedirection();
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+        u.UseBackOffice();
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseInstallerEndpoints();
+        u.UseBackOfficeEndpoints();
+        u.UseWebsiteEndpoints();
+    });
+
 app.UseStaticFiles();
-
-// Use routing and Razor Pages
 app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapRazorPages();  // Ensure this is in place to map Razor Pages routes
     endpoints.MapControllers();
+    endpoints.MapRazorPages();
 });
 
-app.Run();
+// Bind to the PORT environment variable or default to 8080
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+await app.RunAsync($"http://0.0.0.0:{port}");
