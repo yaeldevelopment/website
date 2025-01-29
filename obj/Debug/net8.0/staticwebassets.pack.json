@@ -1825,6 +1825,10 @@
       "PackagePath": "staticwebassets\\lib\\slick-master\\slick\\slick.scss"
     },
     {
+      "Id": "C:\\Users\\user1\\Desktop\\Year_b\\umbraco\\yael_umbraco\\yael_project\\wwwroot\\package.manifest",
+      "PackagePath": "staticwebassets\\package.manifest"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.yael_project.props",
       "PackagePath": "build\\yael_project.props"
     },

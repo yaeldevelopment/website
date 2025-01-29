@@ -4,11 +4,11 @@
     Layout = "Master.cshtml";
 
     var content = Model.Content as Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent;
-
+   
 }<div class="form_div container">
     <div class="contact-form-container windows">
 
-        <h2>@(((Umbraco.Cms.Web.Common.PublishedModels.ContactPage)content).Title_form)</h2>
+    <h2>@(((Umbraco.Cms.Web.Common.PublishedModels.ContactPage)content).Title_form)</h2>
         <p class="fil">@(((Umbraco.Cms.Web.Common.PublishedModels.ContactPage)content).Guide)</p>
         <form id="contactForm" class="general_form contact_form">
             <input type="text" class="form-func" value="Send_Mail" hidden="hidden">
@@ -17,43 +17,43 @@
             <input type="text" class="popup-success" value="" hidden="hidden">
             <input type="text" class="popup-failed" value="" hidden="hidden">
 
-            <div class="form-group">
-                <label for="name">שם*</label>
-                <input type="text" id="name"
-                       name="name"
-                       placeholder="שם" required>
-
-
-            </div>
-            <div class="form-group">
-                <label for="email_contact">מייל</label>
-                <input type="text"
+        <div class="form-group">
+            <label for="name">שם*</label>
+            <input type="text" id="name"
+                   name="name"
+                   placeholder="שם" required>
+     
+   
+        </div>
+        <div class="form-group">
+            <label for="email_contact">מייל</label>
+            <input type="text"
                        name="email_contact"
-                       placeholder='דוא"ל'>
-
-            </div>
-            <div class="form-group">
-                <label for="phone">טלפון*</label>
-                <input type="tel" id="phone"
-                       name="phone"
+                   placeholder='דוא"ל' >
+         
+        </div>
+        <div class="form-group">
+            <label for="phone">טלפון*</label>
+            <input type="tel" id="phone"
+                   name="phone"
                        placeholder="טלפון" required>
 
-            </div>
-            <div class="form-group">
-                <label for="message">הודעה</label>
-                <textarea id="message"
-                          name="message"
-                          placeholder="מעונין ב..."
-                          rows="5"></textarea>
-
-            </div>
-            <button type="submit"
+        </div>
+        <div class="form-group">
+            <label for="message">הודעה</label>
+            <textarea id="message"
+                      name="message"
+                      placeholder="מעונין ב..."
+                      rows="5" ></textarea>
+          
+        </div>
+        <button type="submit"
                     class="submit-button" id="submitButton" disabled>
-                @(((Umbraco.Cms.Web.Common.PublishedModels.ContactPage)content).Txt_send)
-            </button>
-        </form>
+            @(((Umbraco.Cms.Web.Common.PublishedModels.ContactPage)content).Txt_send)
+        </button>
+    </form>
 
-
-    </div>
-    <img class="contact_img" src="@(((Umbraco.Cms.Core.Models.MediaWithCrops<Umbraco.Cms.Web.Common.PublishedModels.Image>)((Umbraco.Cms.Web.Common.PublishedModels.ContactPage)content).Contact_img).Content.UmbracoFile.Src)" />
+  
+</div>
+<img class="contact_img" src="@(((Umbraco.Cms.Core.Models.MediaWithCrops<Umbraco.Cms.Web.Common.PublishedModels.Image>)((Umbraco.Cms.Web.Common.PublishedModels.ContactPage)content).Contact_img).Content.UmbracoFile.Src)" />
 </div>

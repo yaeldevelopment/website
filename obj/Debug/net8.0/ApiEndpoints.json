@@ -35,7 +35,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Umbraco.Cms.Api.Common.ViewModels.Pagination.PagedViewModel\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiContentResponse, Umbraco.Core, Version=13.2.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Umbraco.Cms.Api.Common.ViewModels.Pagination.PagedViewModel\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiContentResponse, Umbraco.Core, Version=13.0.1.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json",
           "text/json",
@@ -85,7 +85,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiContentResponse, Umbraco.Core, Version=13.2.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiContentResponse, Umbraco.Core, Version=13.0.1.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json",
           "text/json",
@@ -277,7 +277,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Umbraco.Cms.Api.Common.ViewModels.Pagination.PagedViewModel\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiMediaWithCropsResponse, Umbraco.Core, Version=13.2.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Umbraco.Cms.Api.Common.ViewModels.Pagination.PagedViewModel\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiMediaWithCropsResponse, Umbraco.Core, Version=13.0.1.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json",
           "text/json",
@@ -316,7 +316,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiMediaWithCropsResponse, Umbraco.Core, Version=13.2.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiMediaWithCropsResponse, Umbraco.Core, Version=13.0.1.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json",
           "text/json",
@@ -442,7 +442,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Umbraco.Cms.Api.Common.ViewModels.Pagination.PagedViewModel\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiContentResponse, Umbraco.Core, Version=13.2.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Umbraco.Cms.Api.Common.ViewModels.Pagination.PagedViewModel\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiContentResponse, Umbraco.Core, Version=13.0.1.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json",
           "text/json",
@@ -614,7 +614,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiContentResponse, Umbraco.Core, Version=13.2.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiContentResponse, Umbraco.Core, Version=13.0.1.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json",
           "text/json",
@@ -684,7 +684,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Umbraco.Cms.Api.Common.ViewModels.Pagination.PagedViewModel\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiMediaWithCropsResponse, Umbraco.Core, Version=13.2.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Umbraco.Cms.Api.Common.ViewModels.Pagination.PagedViewModel\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiMediaWithCropsResponse, Umbraco.Core, Version=13.0.1.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json",
           "text/json",
@@ -801,7 +801,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiMediaWithCropsResponse, Umbraco.Core, Version=13.2.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Umbraco.Cms.Core.Models.DeliveryApi.IApiMediaWithCropsResponse, Umbraco.Core, Version=13.0.1.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json",
           "text/json",

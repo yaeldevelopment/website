@@ -454,3 +454,4 @@ wwwroot\lib\slick-master\slick\slick.scss
 wwwroot\lib\slick-master\slick\slick-theme.css
 wwwroot\lib\slick-master\slick\slick-theme.less
 wwwroot\lib\slick-master\slick\slick-theme.scss
+wwwroot\package.manifest

@@ -261,7 +261,7 @@ header #logo img {
     width: 35px;
     top: 15px;
     height: 20px;
-    right: 49px;
+    right: 80px;
     cursor: pointer;
   }
   .hamburger-menu .menu-icon span {
@@ -534,7 +534,7 @@ label {
 input, textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
   text-align: right;

@@ -24,10 +24,10 @@
 
         homePage = (Umbraco.Cms.Web.Common.PublishedModels.Home)umbracoContext.Content.GetAtRoot().FirstOrDefault();
 
-        CustomersSay = ((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).CustomersSay;
-        information_list = ((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Information_list;
+        CustomersSay=((Umbraco.Cms.Web.Common.PublishedModels.Home) homePage).CustomersSay;
+        information_list=((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Information_list;
         Title_customer = ((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Title_customer;
-        Img_banner = homePage.Img_banner.LocalCrops.Src;
+         Img_banner = homePage.Img_banner.LocalCrops.Src;
     }
 }
 
@@ -35,79 +35,77 @@
     <img src="@Img_banner" />
 </div>
 <div class="container">
-    @if (information_list.Count > 0)
-    {
+@if(information_list.Count>0){
         <div class="row">
-            @for (int i = 0; i < information_list.Count; i++)
-            {
-
-                information = new System.Collections.Generic.List<Umbraco.Cms.Core.Models.Blocks.BlockListItem>(((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Information_list)[i];
-
-                <div class="square col-xs-12 col-lg-4">
-                    <div class="front">
-                        <h3 class="content">@(((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.Information>)information).Content.Information_title)</h3>
-                    </div>
-                    <div class="back">
-                        <div class="content">@(((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.Information>)information).Content.Information_text_show)</div>
-                    </div>
-                </div>
-
-            }
-        </div>
-
-    }
-    @if (CustomersSay != null)
+    @for (int i = 0; i < information_list.Count; i++)
     {
-            <h2>@Title_customer</h2>
-        <div class="slider-container">
 
-            <!-- פריט ראשון -->
-            @for (int i = 0; i < CustomersSay.Count; i++)
-            {
+       information = new System.Collections.Generic.List<Umbraco.Cms.Core.Models.Blocks.BlockListItem>(((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Information_list)[i];
 
-                Umbraco.Cms.Web.Common.PublishedModels.CustomersSayList x = ((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.CustomersSayList>)(new System.Collections.Generic.List<Umbraco.Cms.Core.Models.Blocks.BlockListItem>(CustomersSay)[i])).Content;
-
-
-
-                <div>
-                    <div class="card windows" data-row="2">
-                        @if (@x.Img_customer != null)
-                        {
-                            <img src="@x.Img_customer.LocalCrops" alt="Image 1">
-                        }
-
-                        <h3>@x.Title_customer</h3>
-                        @Html.Raw(x.Customer_howmatch_word)
-
-                    </div>
-                </div>
-            }
-
+    <div class="square col-xs-12 col-lg-4">
+        <div class="front">
+                <h3 class="content">@(((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.Information>)information).Content.Information_title)</h3>
         </div>
+        <div class="back">
+                <div class="content">@(((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.Information>)information).Content.Information_text_show)</div>
+        </div>
+    </div>
+
     }
+        </div>
+    
+  }  
+@if (CustomersSay != null)
+{    <h2>@Title_customer</h2>
+    <div class="slider-container">
+        
+    <!-- פריט ראשון -->
+        @for (int i = 0; i < CustomersSay.Count; i++)
+        {
+
+            Umbraco.Cms.Web.Common.PublishedModels.CustomersSayList x = ((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.CustomersSayList>)(new System.Collections.Generic.List<Umbraco.Cms.Core.Models.Blocks.BlockListItem>(CustomersSay)[i])).Content; 
+
+
+
+        <div>
+                    <div class="card windows" data-row="2">
+                    @if (@x.Img_customer!=null)
+                    {
+                         <img src="@x.Img_customer.LocalCrops" alt="Image 1">
+                    }
+                   
+                    <h3>@x.Title_customer</h3>
+                    @Html.Raw(x.Customer_howmatch_word)
+
+    </div>
+        </div>
+        }
+
+</div>
+}
 </div>
 
 @{
     Umbraco.Cms.Core.Models.Blocks.BlockListModel banner_list_marketing = ((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Banner_list_marketing;
 }
-@if (banner_list_marketing.Count > 0)
+@if (banner_list_marketing.Count>0)
 {
+    
 
-
-    <div class="marketing-bar">
-        <h2>@(((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Title_marketing_banner)</h2>
-        <div class="row container">
+<div class="marketing-bar">
+    <h2>@(((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Title_marketing_banner)</h2>
+    <div class="row container">
             @for (int i = 0; i < banner_list_marketing.Count; i++)
             {
                 var banner_marketing = banner_list_marketing[i];
-                 <div class="item col-3 col-xs-12">
-                    <img src="@(((Umbraco.Cms.Core.Models.MediaWithCrops<Umbraco.Cms.Web.Common.PublishedModels.Image>)((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.ListMarkting>)banner_marketing).Content.Img_marketing).Content.UmbracoFile)" alt="תמונה 1">
-                    <p>@(((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.ListMarkting>)banner_marketing).Content.Text_marketing)</p>
-                 </div>
-            }
-
-
-        </div>
+                <div class="item col-3 col-xs-12">
+                    <img src="@(((Umbraco.Cms.Core.Models.MediaWithCrops<Umbraco.Cms.Web.Common.PublishedModels.Image>)((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.MarketingBanner>)banner_marketing).Content.Img_marketing).Content.UmbracoFile)" alt="תמונה 1">
+        <p>@(((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.MarketingBanner>)banner_marketing).Content.Text_marketing)</p>
     </div>
+            }
+  
+ 
+    </div>
+</div>
 }
 

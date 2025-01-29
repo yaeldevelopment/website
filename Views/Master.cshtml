@@ -12,10 +12,10 @@
 @{
     Layout = null;
     string color_general;
-    string color_text = "";
-    string show_popup = "false";
-    string rich_text_popup = "";
-    string show_time = "";
+    string color_text="";
+    string show_popup="false";
+    string rich_text_popup ="";
+    string show_time ="";
     var content = Model as IPublishedContent;
 
 
@@ -29,7 +29,7 @@
 
     var icon_succses = Helper.GetSettingValue(ContentService, "icon_succses");
     var path_icon_succses = Helper.GetFilePathByMediaKey(MediaService, icon_succses);
-
+ 
     var icon_fail = Helper.GetSettingValue(ContentService, "icon_fail");
     var path_icon_fail = Helper.GetFilePathByMediaKey(MediaService, icon_fail);
 
@@ -53,7 +53,7 @@
     <!-- Add the slick-theme.css if you want default styling -->
 
     <script src="~/lib/jquery-3.7.1.min.js"></script>
-    <script src="~/lib/slick-master/slick/slick.min.js"></script>
+    <script  src="~/lib/slick-master/slick/slick.min.js"></script>
     <script src="~/lib/jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.userway.org/widget.js" data-account="PKWT2JYPKI"></script>
     <script src="~/js/ready.js"></script>
@@ -84,36 +84,38 @@
         <img src="@path_icon_fail" />
         <div class="rich_text"></div>
     </div>
-
+    
     <div id="advertising-popup" style="background-image:url(@path_img_popup)" class="popup advertising hide windows">
         <span class="popup-advertising-close">&times;</span>
         @Html.Raw(rich_text_popup)
     </div>
     @Html.Partial("header")
 
-
-    @RenderBody()
-    @Html.Partial("footer")
-    @if (show_popup == "1")
-    {
+        
+        @RenderBody()
+@Html.Partial("footer")
+    @if (show_popup=="1")
+    { 
         <script>
             // הצגת פופאפ אם אין Cookie או אם הוא פג תוקף
             $(document).ready(function () {
 
-
+                let id;
                 const popupShown = getCookie("promoPopup");
                 if (!popupShown) {
-                    setInterval(() => { showPopup_advertising() }, 8000);
+                     id=setInterval(() => { showPopup_advertising() }, 8000);
                 }
+            
                 $('.popup-advertising-close').click(function () {
+                    clearInterval(id);
                     $(this).parent('.popup').fadeOut();
                     $("#overlay").addClass("hide");
-
+               
                 });
-
-
-
-
+              
+              
+  
+            
                     });
                 function showPopup_advertising() {
                             $("#advertising-popup").removeClass("hide");
@@ -122,7 +124,7 @@
                         }
 
         </script>
-
+        
     }
-
+   
 </body>
