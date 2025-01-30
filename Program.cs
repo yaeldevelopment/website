@@ -42,6 +42,5 @@ app.UseUmbraco()
         u.UseWebsiteEndpoints();
     });
 //await app.RunAsync();
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+await app.RunAsync("http://0.0.0.0:8080");
 
