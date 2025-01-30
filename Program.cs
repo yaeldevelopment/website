@@ -1,19 +1,19 @@
 ﻿var builder = WebApplication.CreateBuilder(args);
 
 // קבלת מחרוזת חיבור ממשתנה סביבה או מקובץ ההגדרות
-// var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING")
-//     ?? builder.Configuration.GetConnectionString("umbracoDbDSN");
+var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING")
+    ?? builder.Configuration.GetConnectionString("umbracoDbDSN");
 
-// if (string.IsNullOrEmpty(connectionString))
-// {
-//     throw new Exception("❌ Missing Umbraco Connection String. Please set 'UMBRACO_CONNECTION_STRING' environment variable or define it in appsettings.json.");
-// }
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new Exception("❌ Missing Umbraco Connection String. Please set 'UMBRACO_CONNECTION_STRING' environment variable or define it in appsettings.json.");
+}
 
 // הגדרת מחרוזת החיבור
-// builder.Services.Configure<Umbraco.Cms.Core.Configuration.Models.ConnectionStrings>(options =>
-// {
-//     options.ConnectionString = connectionString;
-// });
+builder.Services.Configure<Umbraco.Cms.Core.Configuration.Models.ConnectionStrings>(options =>
+{
+    options.ConnectionString = connectionString;
+});
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
