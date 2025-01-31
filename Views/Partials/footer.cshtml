@@ -13,7 +13,7 @@
 
 
 
-        var homePage = umbracoContext.Content.GetAtRoot().FirstOrDefault();
+        var homePage = umbracoContext.Content.GetAtRoot().FirstOrDefault(x => x.Id == 1084);
         footer_text = ((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Footer_text;
 
 

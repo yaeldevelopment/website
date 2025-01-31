@@ -23,10 +23,8 @@
     using (var umbracoContextReference = UmbracoContextFactory.EnsureUmbracoContext())
     {
         var umbracoContext = umbracoContextReference.UmbracoContext;
-    
-
-
-        var homePage = umbracoContext.Content.GetAtRoot().FirstOrDefault();
+  
+        var homePage = umbracoContext.Content.GetAtRoot().FirstOrDefault(x => x.Id == 1084); 
         list_link = ((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).List_link;
 
         var img_website = Helper.GetSettingValue(ContentService, "img_website");
@@ -73,23 +71,24 @@
 
                         @for (int j = 0; j < sub_list_Link.Count; j++)
                         {
-
+                             
 
                             Umbraco.Cms.Web.Common.PublishedModels.List_icon_text item = (Umbraco.Cms.Web.Common.PublishedModels.List_icon_text)(sub_list_Link)[j].Content;
 
 
-
-                                <li class="link @(sub_list_Link.Count>1?(j == 0  ?"general_link":"hide"):"")">
-                                    <a href="@(((Umbraco.Cms.Web.Common.PublishedModels.List_icon_text)item).Url_list.Url)">
-                                @if (item.Icon != null)
-                                {
-                                    <img class="img" src="@(item.Icon.LocalCrops.Src)" />
-                                }
+                                    @if (((Umbraco.Cms.Web.Common.PublishedModels.List_icon_text)item).Url_list != null)
+                                    {
+                                        <li class="link @(sub_list_Link.Count>1?(j == 0  ?"general_link":"hide"):"")">
+                                            <a href="@(((Umbraco.Cms.Web.Common.PublishedModels.List_icon_text)item).Url_list.Url)">
+                                                @if (item.Icon != null)
+                                                {
+                                                    <img class="img" src="@(item.Icon.LocalCrops.Src)" />
+                                                }
 
                                @(((Umbraco.Cms.Web.Common.PublishedModels.List_icon_text)item).Url_list.Name)</a>
 
                             </li>
-
+                            }
                         }
 
 
