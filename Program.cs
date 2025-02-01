@@ -1,4 +1,4 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿﻿var builder = WebApplication.CreateBuilder(args);
 
 // קבלת מחרוזת חיבור ממשתנה סביבה או מקובץ ההגדרות
 var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING")
@@ -43,4 +43,3 @@ app.UseUmbraco()
     });
 //await app.RunAsync();
 await app.RunAsync("http://0.0.0.0:8080");
-
