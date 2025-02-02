@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-   
+    $("#submitButton").prop("disabled", true);
     // הפעלת הסליידר
     $('.slider-container').slick({
         rtl: true,
@@ -115,7 +115,7 @@
 
         // Close popup on click
         $('.popup-close').click(function () {
-            $(this).parent('.popup').fadeOut();
+            $(this).parent('.popup').addClass("hide");
             $("#overlay").addClass("hide");
         });
 

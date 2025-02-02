@@ -5,8 +5,8 @@ using  Umbraco.Cms.Core.PublishedCache;
 using  Umbraco.Cms.Infrastructure.ModelsBuilder;
 using  Umbraco.Cms.Core;
 using  Umbraco.Extensions;
-[assembly:ModelsBuilderAssembly(IsInMemory = true, SourceHash = "d15322f27819ea87c2a8c96e4e13a90cfbf5a7a7")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(IsInMemory = true, SourceHash = "ed72da6d364fec5b76e9e50b6c4d042c5330f187")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -278,6 +278,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("guide")]
 		public virtual string Guide => this.Value<string>(_publishedValueFallback, "guide");
+
+		///<summary>
+		/// rich_text_fail_contact
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("rich_text_fail_contact")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Rich_text_fail_contact => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "rich_text_fail_contact");
+
+		///<summary>
+		/// rich_text_succses_contact
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("rich_text_succses_contact")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Rich_text_succses_contact => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "rich_text_succses_contact");
 
 		///<summary>
 		/// Title_form
