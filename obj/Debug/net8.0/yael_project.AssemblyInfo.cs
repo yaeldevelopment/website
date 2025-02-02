@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("yael_project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4d5adabbb6604c0a49e0a81141dc84a1cf75e5c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b52941d2e14dc8f31a778a34aac93f8564ad765")]
 [assembly: System.Reflection.AssemblyProductAttribute("yael_project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("yael_project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

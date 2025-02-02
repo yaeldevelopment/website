@@ -15,7 +15,7 @@
 			Umbraco.Cms.Web.Common.PublishedModels.List_site_build SampleWebsite=((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.List_site_build>)(new System.Collections.Generic.List<Umbraco.Cms.Core.Models.Blocks.BlockListItem>(SampleWebsites)[i])).Content;
 
 
-			<a target="_blank" href="@(SampleWebsite.Url_site.Url)" class="col-12 col-md-4 card back_img  SampleWebsite" style="background-image:url(@(((Umbraco.Cms.Core.Models.MediaWithCrops<Umbraco.Cms.Web.Common.PublishedModels.Image>)SampleWebsite.Site_img).Content.UmbracoFile))">
+			<a target="_blank" href="@(SampleWebsite.Url_site.Url)" class="col-12 col-md-4 card back_img  SampleWebsite" style="background-image:url(@(SampleWebsite.Site_img.Url))">
 
 	</a>
         }

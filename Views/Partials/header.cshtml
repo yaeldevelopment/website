@@ -19,6 +19,7 @@
 
     Umbraco.Cms.Core.Models.Blocks.BlockListModel list_link;
     var content = Model as IPublishedContent;
+    string img_website="";
     string path_img_website;
     using (var umbracoContextReference = UmbracoContextFactory.EnsureUmbracoContext())
     {
@@ -27,8 +28,8 @@
         var homePage = umbracoContext.Content.GetAtRoot().FirstOrDefault(x => x.Id == 1084); 
         list_link = ((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).List_link;
 
-        var img_website = Helper.GetSettingValue(ContentService, "img_website");
-        path_img_website = Helper.GetFilePathByMediaKey(MediaService, img_website);
+         img_website = Helper.GetSettingUrl(ContentService, "img_website");
+
     }
     
 
@@ -52,7 +53,7 @@
                     </label>
                     <nav class="menu header_list container">
 
-                        <a id="logo" href="/"><img src="@path_img_website" alt="לוגו" /></a>
+                        <a id="logo" href="/"><img src="@img_website" alt="לוגו" /></a>
                         @for (int i = 0; i < list_link.Count; i++)
                 {  
                

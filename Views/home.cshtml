@@ -26,7 +26,7 @@
         CustomersSay=((Umbraco.Cms.Web.Common.PublishedModels.Home) homePage).CustomersSay;
         information_list=((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Information_list;
         Title_customer = ((Umbraco.Cms.Web.Common.PublishedModels.Home)homePage).Title_customer;
-         Img_banner = homePage.Img_banner.LocalCrops.Src;
+        Img_banner = homePage.Img_banner.Url;
     }
 }
 
@@ -70,9 +70,9 @@
 
         <div>
                     <div class="card windows" data-row="2">
-                    @if (@x.Img_customer!=null)
+                        @if (@x.Img_customer.Url != "")
                     {
-                         <img src="@x.Img_customer.LocalCrops" alt="Image 1">
+                            <img src="@x.Img_customer.Url" alt="Image 1">
                     }
                    
                     <h3>@x.Title_customer</h3>
@@ -101,7 +101,7 @@
             {
                 var banner_marketing = banner_list_marketing[i];
                 <div class="item col-3 col-xs-12">
-                    <img src="@(((Umbraco.Cms.Core.Models.MediaWithCrops<Umbraco.Cms.Web.Common.PublishedModels.Image>)((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.MarketingBanner>)banner_marketing).Content.Img_marketing).Content.UmbracoFile)" alt="תמונה 1">
+                    <img src="@(((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.MarketingBanner>)banner_marketing).Content.Img_marketing.Url)" alt="תמונה 1">
         <p>@(((Umbraco.Cms.Core.Models.Blocks.BlockListItem<Umbraco.Cms.Web.Common.PublishedModels.MarketingBanner>)banner_marketing).Content.Text_marketing)</p>
     </div>
             }

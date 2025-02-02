@@ -31,6 +31,53 @@ namespace yael_project.Models
     public enum Subject { Send_Email}
     public  class Helper
     {
+        public static string GetSettingUrl(IContentService _contentService, string data, string Alias = "settings")
+        {
+            var settingsNode = _contentService.GetRootContent()
+                                  .FirstOrDefault(x => x.ContentType.Alias == Alias);
+
+            if (settingsNode != null && settingsNode.HasProperty(data))
+            {
+                var value = settingsNode.GetValue<string>(data);
+
+                // אם הפלט הוא JSON (מערך או אובייקט)
+                if (IsJson(value))
+                {
+                    try
+                    {
+                        var token = Newtonsoft.Json.Linq.JToken.Parse(value);
+
+                        if (token is Newtonsoft.Json.Linq.JObject jsonObject)
+                        {
+                            if (jsonObject["url"] != null)
+                            {
+                                return jsonObject["url"].ToString();
+                            }
+                        }
+                        else if (token is Newtonsoft.Json.Linq.JArray jsonArray)
+                        {
+                            foreach (var item in jsonArray)
+                            {
+                                if (item is Newtonsoft.Json.Linq.JObject obj && obj["url"] != null)
+                                {
+                                    return obj["url"].ToString();
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"JSON Deserialization Error: {ex.Message}");
+                    }
+                }
+
+                return value; // החזרת הערך אם הוא לא JSON
+            }
+
+            return null; // ערך ברירת מחדל
+        }
+
+
         public static string GetSettingValue(IContentService _contentService, string data, string Alias = "settings")
         {
             var settingsNode = _contentService.GetRootContent()

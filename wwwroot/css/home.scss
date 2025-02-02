@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
     opacity: 1 !important;
+    &:first-child{
+        width:100%;
+    }
 }
 .banner img {
     @media(max-width:767px) {

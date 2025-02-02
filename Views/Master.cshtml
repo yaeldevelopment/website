@@ -27,22 +27,22 @@
     rich_text_popup = Helper.GetSettingValue(ContentService, "rich_text_popup");
     show_time = Helper.GetSettingValue(ContentService, "show_time");
 
-    var icon_succses = Helper.GetSettingValue(ContentService, "icon_succses");
-    var path_icon_succses = Helper.GetFilePathByMediaKey(MediaService, icon_succses);
+    var icon_succses = Helper.GetSettingUrl(ContentService, "icon_succses");
+    //var path_icon_succses = Helper.GetFilePathByMediaKey(MediaService, icon_succses);
  
-    var icon_fail = Helper.GetSettingValue(ContentService, "icon_fail");
-    var path_icon_fail = Helper.GetFilePathByMediaKey(MediaService, icon_fail);
+    var icon_fail = Helper.GetSettingUrl(ContentService, "icon_fail");
+    // var path_icon_fail = Helper.GetFilePathByMediaKey(MediaService, icon_fail);
 
-    var img_website = Helper.GetSettingValue(ContentService, "img_website");
-    var path_img_website = Helper.GetFilePathByMediaKey(MediaService, img_website);
+    var img_website = Helper.GetSettingUrl(ContentService, "img_website");
+    // var path_img_website = Helper.GetFilePathByMediaKey(MediaService, img_website);
 
-    var img_popup = Helper.GetSettingValue(ContentService, "img_popup");
-    var path_img_popup = Helper.GetFilePathByMediaKey(MediaService, img_popup);
+    var img_popup = Helper.GetSettingUrl(ContentService, "img_popup");
+    // var path_img_popup = Helper.GetFilePathByMediaKey(MediaService, img_popup);
 }
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="@path_img_website">
+    <link rel="icon" type="image/x-icon" href="@img_website">
 
 
     <title>  יעל עג'מי - מפתחת| Full Stack</title>
@@ -74,18 +74,18 @@
     <div id="overlay" class="hide"></div>
     <div id="success-popup" class="popup success hide windows">
         <span class="popup-close">&times;</span>
-        <img src="@path_icon_succses" />
+        <img src="@icon_succses" />
         <div class="rich_text"></div>
 
     </div>
 
     <div id="error-popup" class="popup error hide windows">
         <span class="popup-close">&times;</span>
-        <img src="@path_icon_fail" />
+        <img src="@icon_fail" />
         <div class="rich_text"></div>
     </div>
     
-    <div id="advertising-popup" style="background-image:url(@path_img_popup)" class="popup advertising hide windows">
+    <div id="advertising-popup" style="background-image:url(@img_popup)" class="popup advertising hide windows">
         <span class="popup-advertising-close">&times;</span>
         @Html.Raw(rich_text_popup)
     </div>

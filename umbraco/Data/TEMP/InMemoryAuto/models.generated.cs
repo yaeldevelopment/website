@@ -16,8 +16,8 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-[assembly:ModelsBuilderAssembly(IsInMemory = true, SourceHash = "1e833bc2543c801385fba71c3dce3263d364967a")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(IsInMemory = true, SourceHash = "d15322f27819ea87c2a8c96e4e13a90cfbf5a7a7")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
@@ -69,12 +69,20 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Color_text => this.Value<string>(_publishedValueFallback, "color_text");
 
 		///<summary>
+		/// contact_mail
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contact_mail")]
+		public virtual string Contact_mail => this.Value<string>(_publishedValueFallback, "contact_mail");
+
+		///<summary>
 		/// icon_fail
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("icon_fail")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Icon_fail => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "icon_fail");
+		public virtual global::Umbraco.Cms.Core.Models.Link Icon_fail => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "icon_fail");
 
 		///<summary>
 		/// icon_succses
@@ -82,7 +90,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("icon_succses")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Icon_succses => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "icon_succses");
+		public virtual global::Umbraco.Cms.Core.Models.Link Icon_succses => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "icon_succses");
 
 		///<summary>
 		/// img_popup
@@ -90,7 +98,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("img_popup")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Img_popup => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "img_popup");
+		public virtual global::Umbraco.Cms.Core.Models.Link Img_popup => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "img_popup");
 
 		///<summary>
 		/// img_website
@@ -98,7 +106,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("img_website")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Img_website => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "img_website");
+		public virtual global::Umbraco.Cms.Core.Models.Link Img_website => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "img_website");
 
 		///<summary>
 		/// rich_text_popup
@@ -160,7 +168,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("site_img")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Site_img => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "site_img");
+		public virtual global::Umbraco.Cms.Core.Models.Link Site_img => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "site_img");
 
 		///<summary>
 		/// Url_site
@@ -248,7 +256,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("contact_img")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Contact_img => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "contact_img");
+		public virtual global::Umbraco.Cms.Core.Models.Link Contact_img => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "contact_img");
 
 		///<summary>
 		/// Guide
@@ -320,7 +328,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("img_customer")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Img_customer => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "img_customer");
+		public virtual global::Umbraco.Cms.Core.Models.Link Img_customer => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "img_customer");
 
 		///<summary>
 		/// Title_customer
@@ -392,7 +400,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("img_banner")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Img_banner => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "img_banner");
+		public virtual global::Umbraco.Cms.Core.Models.Link Img_banner => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "img_banner");
 
 		///<summary>
 		/// Information_list
@@ -512,7 +520,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("img_marketing")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Img_marketing => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "img_marketing");
+		public virtual global::Umbraco.Cms.Core.Models.Link Img_marketing => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "img_marketing");
 
 		///<summary>
 		/// Text_marketing

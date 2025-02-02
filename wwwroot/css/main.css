@@ -313,6 +313,9 @@ header #logo img {
   align-items: center;
   opacity: 1 !important;
 }
+.slick-slide:first-child {
+  width: 100%;
+}
 
 .banner img {
   background-position: center;
@@ -571,7 +574,7 @@ button.submit-button:not(:disabled):hover {
 
 .contact_img {
   width: -webkit-fill-available;
-  height: 726px;
+  height: 804.31px;
   border-radius: 12px;
   margin-right: 5%;
 }
