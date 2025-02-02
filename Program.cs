@@ -1,4 +1,6 @@
-﻿﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Microsoft.Extensions.FileProviders;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // קבלת מחרוזת חיבור ממשתנה סביבה או מקובץ ההגדרות
 var connectionString = Environment.GetEnvironmentVariable("UMBRACO_CONNECTION_STRING")
@@ -29,6 +31,12 @@ await app.BootUmbracoAsync();
 app.UseHttpsRedirection();
 app.UseStaticFiles(); // חובה ל- Render כדי שה- BackOffice יעבוד
 
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
+    RequestPath = ""
+});
+
 app.UseUmbraco()
     .WithMiddleware(u =>
     {
@@ -41,5 +49,5 @@ app.UseUmbraco()
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
-//await app.RunAsync();
-await app.RunAsync("http://0.0.0.0:8080");
+await app.RunAsync();
+//await app.RunAsync("http://0.0.0.0:8080");
