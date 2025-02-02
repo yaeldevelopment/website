@@ -44,6 +44,7 @@ wwwroot\lib\bootstrap-3.4.1-dist\bootstrap-3.4.1-dist\fonts\glyphicons-halflings
 wwwroot\lib\bootstrap-3.4.1-dist\bootstrap-3.4.1-dist\js\bootstrap.js
 wwwroot\lib\bootstrap-3.4.1-dist\bootstrap-3.4.1-dist\js\bootstrap.min.js
 wwwroot\lib\bootstrap-3.4.1-dist\bootstrap-3.4.1-dist\js\npm.js
+wwwroot\lib\jquery.validate.min.js
 wwwroot\lib\jquery-3.7.1.min.js
 wwwroot\lib\jquery-validation-1.19.5\.editorconfig
 wwwroot\lib\jquery-validation-1.19.5\.gitattributes

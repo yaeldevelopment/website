@@ -1721,6 +1721,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery-validation-1.19.5\\validation.jquery.json"
     },
     {
+      "Id": "C:\\Users\\user1\\Desktop\\Year_b\\umbraco\\yael_umbraco\\yael_project\\wwwroot\\lib\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery.validate.min.js"
+    },
+    {
       "Id": "C:\\Users\\user1\\Desktop\\Year_b\\umbraco\\yael_umbraco\\yael_project\\wwwroot\\lib\\slick-master\\.gitignore",
       "PackagePath": "staticwebassets\\lib\\slick-master\\.gitignore"
     },
